@@ -1,0 +1,52 @@
+GESTIONALE WATERGOLD - VERSIONE DIMOSTRATIVA
+=============================================
+
+Questa è una demo con dati FITTIZI. Nessun dato reale del cliente è contenuto nel file.
+
+1. COME APRIRLA
+   - Su PC: fare doppio clic su index.html (si apre nel browser).
+   - Sul cellulare: pubblicare la cartella su un indirizzo web (vedi punto 6) e aprire il link.
+   - Serve internet alla prima apertura (per il QR code e per Excel). Poi il gestionale
+     funziona anche senza rete, ma le modifiche restano su quel dispositivo.
+
+2. ACCESSO DI PROVA
+   Titolare / segreteria (vede tutto):
+     admin@watergold.demo  ·  password: admin123
+   Tecnici (vedono agenda, giro, clienti senza dati fiscali, magazzino):
+     marco@watergold.demo  ·  password: tecnico123
+     luca@watergold.demo   ·  password: tecnico123
+     giulia@watergold.demo ·  password: tecnico123
+
+3. COSA PROVARE
+   Segreteria:
+   - Panoramica: riepilogo della giornata e attività automatiche.
+   - Agenda: creare un nuovo intervento, cambiare stato, fatturare un intervento completato.
+   - Clienti: cercare tra 3.000 clienti, aprire una scheda, aggiungere un cliente.
+   - Magazzino: scrivere un codice (es. MAT-001) e premere Invio come con uno scanner.
+   - Promemoria: messaggi per gli interventi di domani.
+   - Fatture: generare le fatture del mese e stamparne una.
+   - Automazioni: attivare o disattivare le regole e cliccare "Esegui automazioni ora".
+   - Dati e fogli: esportare i clienti in Excel o CSV, modificarli e reimportarli.
+
+   Tecnico (usare il cellulare):
+   - Il mio giro: indirizzo su mappa, chiamata, stato "In corso" e "Completato",
+     materiali usati, firma del cliente sul telefono, rapporto stampabile.
+   - Magazzino: scarico rapido dei materiali con lo scanner.
+
+4. TEMA
+   Il pulsante con la luna (in alto a destra, o nella barra laterale) passa dal tema
+   chiaro a quello scuro. La scelta viene ricordata.
+
+5. RIPRISTINO
+   Per riportare la demo allo stato iniziale: Dati e fogli > "Ricarica i dati demo"
+   (oppure cancellare i dati del browser per questo sito).
+
+6. PUBBLICARE LA DEMO (per inviarla al cliente)
+   - Il modo più semplice e gratuito: https://app.netlify.com/drop
+     trascinare la cartella "demo-watergold" nella pagina: si ottiene un link da inviare.
+   - In alternativa GitHub Pages o qualunque hosting statico.
+
+NOTE
+- Le password sono di prova: per l'uso reale verranno sostituite da un sistema di accesso
+  con database online.
+- I dati restano sul dispositivo in cui si lavora: per un uso reale serve il database condiviso.
