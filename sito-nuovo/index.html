@@ -374,9 +374,9 @@ const $=s=>document.querySelector(s);
 const io=(fn,opt)=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){fn(e.target);} }),opt);
 
 // header solido + barra progresso
-const top=$('#top'), prog=$('#progress');
+const hdr=$('#top'), prog=$('#progress');
 addEventListener('scroll',()=>{
-  top.classList.toggle('solid',scrollY>40);
+  hdr.classList.toggle('solid',scrollY>40);
   const h=document.documentElement.scrollHeight-innerHeight;
   prog.style.width=(scrollY/h*100)+'%';
 },{passive:true});
