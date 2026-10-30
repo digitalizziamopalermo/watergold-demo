@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scaletta Chiamata Pietro</title>
+<style>
+:root{--rosa:#ff7eb3;--nero:#0b0b0d;--nero2:#17171c;--nero3:#26262d;--crema:#f6ead0;--pist:#a6c76c;--txt:#f4f1ea;--muted:#b9b4aa;--fz:#ffd400}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nero);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:30px}
+h2{font-size:19px;color:var(--rosa);margin:30px 0 10px;text-transform:uppercase;letter-spacing:1px}
+.sub{color:var(--muted);font-size:14px}
+.timer{position:sticky;top:0;z-index:5;background:var(--nero);padding:10px 0;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--nero3)}
+.timer .t{font:800 28px ui-monospace,monospace;color:var(--crema);min-width:90px}
+.timer button{padding:8px 14px;border-radius:99px;border:2px solid var(--rosa);background:transparent;color:var(--txt);font-weight:700;cursor:pointer}
+.timer .ph{font-size:13px;color:var(--pist);font-weight:700}
+.step{background:var(--nero2);border:1px solid var(--nero3);border-left:4px solid var(--rosa);border-radius:12px;padding:12px 14px;margin:10px 0}
+.step.now{border-left-color:var(--pist);background:#1d2417}
+.step .m{font-weight:800;color:var(--crema)}
+.say{display:block;margin-top:6px;color:#fff;background:rgba(255,126,179,.1);border-radius:8px;padding:8px 10px;font-style:italic}
+.opt{color:var(--fz);font-size:12px;font-weight:800}
+ol,ul{padding-left:20px}
+li{margin:6px 0}
+details{background:var(--nero2);border:1px solid var(--nero3);border-radius:12px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:6px;color:var(--crema)}
+.no li{color:#ffb3b3}
+.chk label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--nero3);cursor:pointer}
+.chk input{margin-top:5px;width:18px;height:18px;accent-color:var(--pist)}
+.chk input:checked+span{color:var(--muted);text-decoration:line-through}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{border-bottom:1px solid var(--nero3);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600}
+mark{background:var(--fz);color:#000;padding:0 4px;border-radius:3px;font-weight:700}
+a{color:var(--rosa)}
+.links a{display:inline-block;margin:4px 6px 4px 0;padding:6px 10px;border:1px solid var(--rosa);border-radius:99px;text-decoration:none;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Chiamata con Pietro Adragna</h1>
+  <p class="sub">Sabato 31 ottobre 2026 · ore 11:15 · Google Meet <a href="https://meet.google.com/osv-fwnj-gor" target="_blank">meet.google.com/osv-fwnj-gor</a> · durata massima 15 minuti (lui ha un appuntamento alle 12:30)</p>
+
+  <div class="timer"><span class="t" id="t">00:00</span><button id="go">▶ Avvia</button><button id="rs">↺</button><span class="ph" id="ph">Pronto</span></div>
+
+  <h2>Pagine da aprire</h2>
+  <div class="links">
+    <a href="media-kit.html" target="_blank">1 · Media kit</a><a href="link-in-bio.html" target="_blank">2 · Link in bio</a><a href="media-kit.pdf" target="_blank">PDF media kit</a>
+    <a href="demo-montaggio.html" target="_blank">Montaggio reel</a><a href="demo-grafiche.html" target="_blank">Grafiche</a><a href="demo-social.html" target="_blank">Gestione social</a><a href="demo-collaborazioni.html" target="_blank">Collaborazioni</a>
+  </div>
+
+  <h2>Scaletta (10-15 minuti)</h2>
+  <div class="step" data-from="0"><span class="m">0-1 min · Saluto</span>
+    <span class="say">«Ciao Pietro, grazie per il tempo! So che hai una giornata piena: ti rubo 10 minuti, promesso.»</span></div>
+  <div class="step" data-from="1"><span class="m">1-2 min · Chi siamo</span>
+    <span class="say">«Siamo una piccola realtà di Palermo: siti, social, grafiche e reel per attività locali e creator. Non è una piattaforma, non c’è niente da iscriversi.»</span></div>
+  <div class="step" data-from="2"><span class="m">2-4 min · Perché lui</span>
+    <span class="say">«Il tuo reel del cannolo ha fatto più di 6.000 like e 580 commenti: è un pubblico vero, che commenta. Pasticcerie e locali cercano proprio creator così, ma serve un modo semplice per fargli vedere i tuoi numeri.»</span></div>
+  <div class="step" data-from="4"><span class="m">4-8 min · Mostro media kit e pagina (condivisione schermo)</span>
+    <span class="say">«Questo è il media kit: è come un biglietto da visita per i brand. Lo mandi a un locale e in 30 secondi capisce chi sei, i tuoi numeri e cosa puoi fare per lui.»</span>
+    <span class="say">«Questa invece è la pagina da mettere nella bio al posto di Linktree: i tuoi reel migliori, il pulsante per seguirti e un modulo dove i brand ti scrivono.»</span>
+    <span class="say">«I numeri in giallo sono inventati: li sostituiamo con i tuoi veri.»</span></div>
+  <div class="step" data-from="8"><span class="m">8-10 min · Cosa mi serve da lui</span>
+    <span class="say">«Per completarlo mi servono poche cose: gli screenshot degli insight del profilo, 5-6 foto o reel che ti piacciono di più, i brand con cui hai già lavorato e una tua foto. Te lo preparo entro una settimana.»</span></div>
+  <div class="step" data-from="10"><span class="m">10-12 min · Altri servizi <span class="opt">SOLO SE CHIEDE</span></span>
+    <span class="say">«Facciamo anche montaggio reel, grafiche, gestione social e collaborazioni con i locali: ti faccio vedere un esempio veloce. Se ti servono li vediamo insieme, senza impegno.»</span></div>
+  <div class="step" data-from="12"><span class="m">12-15 min · Chiusura</span>
+    <span class="say">«Allora il prossimo passo: mi mandi il materiale via email a digitalizziamopalermo@gmail.com o in DM sul profilo Instagram di Digitalizziamo Palermo, come ti viene più comodo. Grazie davvero!»</span>
+    <span class="say">«Ultima cosa: quando metti la pagina in bio, ti farebbe piacere taggare Digitalizziamo Palermo?»</span></div>
+
+  <h2>5 domande da fargli</h2>
+  <ol>
+    <li>Con quali locali o brand hai già collaborato, e come ti hanno contattato?</li>
+    <li>Che tipo di collaborazioni ti piacerebbe fare di più (pasticcerie, ristoranti, prodotti, Palermo calcio)?</li>
+    <li>Oggi che cosa hai nella bio di Instagram? Ti arrivano già richieste dai brand?</li>
+    <li>Dove si trova la maggior parte dei tuoi follower: Palermo, Trapani o fuori Sicilia?</li>
+    <li>C’è una parte del lavoro sui social che ti porta via più tempo (montaggio, grafiche, rispondere)?</li>
+  </ol>
+
+  <h2>5 obiezioni e risposte</h2>
+  <details><summary>«Qual è la fregatura?»</summary><p>«Nessuna. Il media kit e la pagina restano tuoi. A noi serve un bel lavoro da mostrare nel portfolio.»</p></details>
+  <details><summary>«Quanto costa dopo?»</summary><p>«Niente: il media kit e la pagina sono gratis e restano gratis. Se un giorno ti servono altri servizi, li vediamo insieme, senza obbligo.»</p></details>
+  <details><summary>«Non ho tempo.»</summary><p>«Ti servono 10 minuti: mi mandi gli screenshot e qualche foto, al resto penso io.»</p></details>
+  <details><summary>«Ho già Linktree.»</summary><p>«Va benissimo, la tieni finché vuoi. Questa in più mostra i tuoi numeri e ha il modulo per i brand: provala e decidi tu.»</p></details>
+  <details><summary>«Perché gratis?»</summary><p>«Perché ci piace il tuo lavoro, e il tuo pubblico (pasticcerie e locali) è lo stesso con cui lavoriamo noi. Un bel lavoro per te è la migliore pubblicità anche per noi.»</p></details>
+
+  <h2>3 cose da NON fare</h2>
+  <ul class="no">
+    <li>Parlare troppo: fare domande e lasciarlo parlare. Lui ha poco tempo.</li>
+    <li>Dare prezzi: «li vediamo insieme se ti servono».</li>
+    <li>Promettere numeri (follower, visualizzazioni, guadagni).</li>
+  </ul>
+
+  <h2>Checklist tecnica (domani mattina)</h2>
+  <div class="chk" id="chk">
+    <label><input type="checkbox"><span>Chrome aperto con l’account digitalizziamopalermo@gmail.com</span></label>
+    <label><input type="checkbox"><span>Aprire in schede separate: media kit, link in bio, PDF, le 4 demo, questa scaletta (su un altro dispositivo o stampata)</span></label>
+    <label><input type="checkbox"><span>Chiudere tutte le altre schede e le notifiche (email, WhatsApp Web)</span></label>
+    <label><input type="checkbox"><span>Controllare che le pagine si vedano bene (animazioni partite, internet funzionante)</span></label>
+    <label><input type="checkbox"><span>Ore 11:10: aprire il link Meet <a href="https://meet.google.com/osv-fwnj-gor" target="_blank">meet.google.com/osv-fwnj-gor</a></span></label>
+    <label><input type="checkbox"><span>Provare microfono e webcam nell’anteprima di Meet</span></label>
+    <label><input type="checkbox"><span>Entrare e ammettere Pietro quando bussa</span></label>
+    <label><input type="checkbox"><span>Per mostrare: «Presenta ora» › «Una scheda» › scegliere la scheda del media kit</span></label>
+    <label><input type="checkbox"><span>Per cambiare pagina: aprire l’altra scheda e cliccare «Condividi questa scheda»</span></label>
+    <label><input type="checkbox"><span>Acqua vicino, telefono in silenzioso</span></label>
+  </div>
+
+  <h2>Da chiedere a Pietro (dati fittizi da sostituire)</h2>
+  <table>
+    <tr><th>Dato</th><th>Valore fittizio usato</th><th>Dove compare</th></tr>
+    <tr><td>Numero di follower</td><td><mark>48.000</mark></td><td>media kit (web e PDF), link in bio</td></tr>
+    <tr><td>Visualizzazioni medie per reel</td><td><mark>35.000</mark></td><td>media kit (web e PDF)</td></tr>
+    <tr><td>Età del pubblico</td><td><mark>18-24 24% · 25-34 41% · 35-44 22% · 45+ 13%</mark></td><td>media kit</td></tr>
+    <tr><td>Città del pubblico</td><td><mark>Palermo 38% · Trapani 21% · Agrigento 11% · altre 30%</mark></td><td>media kit</td></tr>
+    <tr><td>Genere del pubblico</td><td><mark>uomini 57% · donne 43%</mark></td><td>media kit</td></tr>
+    <tr><td>Brand / locali con cui ha collaborato</td><td><mark>Pasticceria Esempio, Bar Esempio, Brand Esempio</mark></td><td>media kit</td></tr>
+    <tr><td>Sua foto</td><td><mark>cerchio «PA»</mark></td><td>media kit, link in bio</td></tr>
+    <tr><td>5-6 foto/reel preferiti</td><td><mark>solo i 3 reel visti</mark></td><td>media kit, link in bio</td></tr>
+    <tr><td>Codice sconto preferito</td><td><mark>PIETRO10</mark></td><td>demo collaborazioni</td></tr>
+    <tr><td>Indirizzo della pagina</td><td><mark>digitalizziamopalermo.it/pietro-adragna o pietroadragna.pages.dev</mark></td><td>da decidere insieme</td></tr>
+  </table>
+</div>
+<script>
+let s=0,iv=null;const t=document.getElementById('t'),ph=document.getElementById('ph'),steps=[...document.querySelectorAll('.step')];
+const names=['Saluto','Chi siamo','Perché lui','Mostro media kit e pagina','Cosa mi serve','Altri servizi (se chiede)','Chiusura'];
+function draw(){const m=Math.floor(s/60);t.textContent=String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  let k=0;steps.forEach((x,j)=>{if(m>=+x.dataset.from)k=j});steps.forEach((x,j)=>x.classList.toggle('now',j===k&&s>0));
+  ph.textContent=s?names[k]:'Pronto';t.style.color=m>=13?'#ff7a7a':''}
+document.getElementById('go').onclick=e=>{if(iv){clearInterval(iv);iv=null;e.target.textContent='▶ Riprendi'}else{iv=setInterval(()=>{s++;draw()},1000);e.target.textContent='❚❚ Pausa'}};
+document.getElementById('rs').onclick=()=>{s=0;draw()};
+const boxes=[...document.querySelectorAll('#chk input')];
+try{const v=JSON.parse(localStorage.getItem('chk-pietro')||'[]');boxes.forEach((b,i)=>b.checked=!!v[i])}catch(e){}
+boxes.forEach(b=>b.onchange=()=>{try{localStorage.setItem('chk-pietro',JSON.stringify(boxes.map(x=>x.checked)))}catch(e){}});
+</script>
+</body>
+</html>

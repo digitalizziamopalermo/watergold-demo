@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Montaggio Reel</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#ff7eb3;--nero:#0b0b0d;--nero2:#17171c;--nero3:#26262d;--crema:#f6ead0;--pist:#a6c76c;--txt:#f4f1ea;--muted:#b9b4aa;--rosso:#ff5a5a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nero);color:var(--txt);font-family:Inter,system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 16px 50px}
+.k{font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--rosa)}
+h1{font:400 clamp(38px,7vw,68px)/.95 Anton,Impact,sans-serif;text-transform:uppercase;margin:8px 0 10px}
+h1 span{color:var(--pist)}
+.lead{color:var(--muted);max-width:640px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.side h2{font:400 30px Anton,Impact,sans-serif;text-transform:uppercase;margin-bottom:12px;text-align:center}
+.side.a h2{color:var(--rosso)} .side.b h2{color:var(--pist)}
+.phone{width:min(260px,100%);aspect-ratio:9/16;margin:0 auto;border-radius:30px;border:8px solid #000;outline:2px solid var(--nero3);position:relative;overflow:hidden;background:#111}
+.fr{position:absolute;inset:0;opacity:0;transition:opacity .35s;display:grid;place-items:center}
+.fr.on{opacity:1}
+.time{position:absolute;top:12px;left:12px;z-index:5;background:rgba(0,0,0,.6);font-weight:800;font-size:12px;padding:4px 8px;border-radius:8px}
+.prog{position:absolute;left:10px;right:10px;top:6px;height:3px;background:rgba(255,255,255,.25);z-index:5;border-radius:3px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:#fff}
+.car{background:linear-gradient(#5d6b7a,#2b323b)}
+.car .wheel{width:120px;height:120px;border-radius:50%;border:16px solid #111;position:absolute;bottom:-40px;left:50%;margin-left:-60px}
+.car .face{font-size:80px}
+.bar{background:linear-gradient(#3a2a1a,#160e08)}
+.big{position:absolute;left:12px;right:12px;font:400 30px/1 Anton,Impact,sans-serif;text-transform:uppercase;text-align:center;color:#fff;text-shadow:0 3px 0 #000,0 0 14px #000}
+.big.top{top:44px;font-size:32px}
+.big.top em{font-style:normal;background:var(--rosa);color:#000;padding:0 6px;text-shadow:none}
+.subt{position:absolute;left:14px;right:14px;bottom:70px;text-align:center;font-weight:800;font-size:16px;background:rgba(0,0,0,.65);border-radius:8px;padding:6px}
+.small{position:absolute;left:14px;right:14px;bottom:70px;text-align:center;color:#ddd;font-size:12px}
+.cannolo{width:190px;height:72px;border-radius:36px;background:linear-gradient(180deg,#d99a55,#9b5f25 70%,#6d3f16);transform:rotate(-22deg);position:relative;box-shadow:0 18px 30px rgba(0,0,0,.6)}
+.cannolo::before,.cannolo::after{content:"";position:absolute;top:4px;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#fff8e8 0 50%,#f3e2bf 51%);box-shadow:inset 0 0 0 0 transparent}
+.cannolo::before{left:-20px}.cannolo::after{right:-20px}
+.cannolo b{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--pist);z-index:2}
+.zoom .cannolo{animation:zm 1.6s ease-out forwards}
+@keyframes zm{from{transform:rotate(-22deg) scale(.8)}to{transform:rotate(-18deg) scale(1.25)}}
+.bite .cannolo{clip-path:polygon(0 0,82% 0,74% 30%,86% 55%,76% 100%,0 100%)}
+.cta{background:linear-gradient(160deg,#ff7eb3,#a8326a)}
+.cta .q{font:400 34px/1 Anton,Impact,sans-serif;text-transform:uppercase;text-align:center;color:#000;padding:0 16px}
+.cta .arrow{font-size:46px;animation:dn 1s ease-in-out infinite;margin-top:14px}
+@keyframes dn{50%{transform:translateY(10px)}}
+.steps{margin-top:14px;display:flex;justify-content:center;gap:6px}
+.steps span{font-size:11px;font-weight:800;padding:4px 8px;border-radius:99px;background:var(--nero2);color:var(--muted)}
+.steps span.on{background:var(--rosa);color:#000}
+.side.a .steps span.on{background:var(--rosso)}
+.desc{margin-top:12px;text-align:center;min-height:44px;color:var(--crema);font-size:14px}
+.ctrl{display:flex;justify-content:center;gap:10px;margin-top:22px}
+.ctrl button{padding:12px 20px;border-radius:99px;border:2px solid var(--rosa);background:transparent;color:var(--txt);font-weight:800;cursor:pointer}
+.ctrl button.pri{background:var(--rosa);color:#000}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rule{background:var(--nero2);border:1px solid var(--nero3);border-radius:18px;padding:20px}
+.rule .n{font:400 46px Anton,Impact,sans-serif;color:var(--rosa)}
+.rule b{display:block;margin:6px 0}
+.rule p{color:var(--muted);font-size:14px}
+footer{margin-top:34px;color:var(--muted);font-size:12px;text-align:center}
+footer a{color:var(--rosa)}
+@media(max-width:720px){.pair,.rules{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="k">Montaggio reel · esempio</div>
+  <h1>Il reel del cannolo:<br><span>prima e dopo</span></h1>
+  <p class="lead">Stesso video, montaggio diverso. Su Instagram si decide tutto nel primo secondo: chi non vede subito il cannolo, scorre via.</p>
+
+  <div class="pair">
+    <div class="side a">
+      <h2>Prima</h2>
+      <div class="phone" id="pa">
+        <div class="prog"><i></i></div><div class="time">0s</div>
+        <div class="fr car"><div class="face">🚗🧔</div><div class="wheel"></div><div class="small">Pietro in auto: «Allora ragazzi, oggi andiamo…»</div></div>
+        <div class="fr car"><div class="face">🧔💬</div><div class="small">…ancora in auto, parla del viaggio</div></div>
+        <div class="fr bar"><div class="face" style="font-size:70px">🚶‍♂️🏪</div><div class="small">arriva alla pasticceria</div></div>
+        <div class="fr bar"><div class="cannolo"><b style="left:-6px;top:22px"></b><b style="right:-4px;top:26px"></b></div><div class="small">il cannolo arriva solo qui</div></div>
+      </div>
+      <div class="steps"><span>0s</span><span>1s</span><span>3s</span><span>6s</span></div>
+      <div class="desc"></div>
+    </div>
+    <div class="side b">
+      <h2>Dopo</h2>
+      <div class="phone" id="pb">
+        <div class="prog"><i></i></div><div class="time">0s</div>
+        <div class="fr bar zoom"><div class="big top">Il cannolo <em>più buono</em> di Trapani?</div><div class="cannolo"><b style="left:-6px;top:22px"></b><b style="left:8px;top:40px"></b><b style="right:-4px;top:26px"></b><b style="right:10px;top:44px"></b></div></div>
+        <div class="fr bar bite"><div class="cannolo"><b style="left:-6px;top:22px"></b><b style="left:8px;top:40px"></b></div><div class="subt">«Ricotta fresca, scorza che fa crack…»</div></div>
+        <div class="fr car" style="background:linear-gradient(#3a2a1a,#160e08)"><div class="face">🤤🔥</div><div class="subt">«Ragazzi… questo è il numero uno.»</div></div>
+        <div class="fr cta"><div><div class="q">E per te qual è il migliore?</div><div class="q" style="font-size:20px;margin-top:10px">Scrivilo nei commenti</div><div class="arrow" style="text-align:center">👇</div></div></div>
+      </div>
+      <div class="steps"><span>0s</span><span>1s</span><span>3s</span><span>fine</span></div>
+      <div class="desc"></div>
+    </div>
+  </div>
+  <div class="ctrl"><button class="pri" id="play">▶ Riproduci</button><button id="next">Fotogramma ›</button></div>
+
+  <div class="rules">
+    <div class="rule"><div class="n">1</div><b>Il protagonista nel primo secondo</b><p>Si apre con il cannolo in primo piano, non con l’auto o il viaggio. Il viaggio va dopo, o si taglia.</p></div>
+    <div class="rule"><div class="n">2</div><b>Una scritta grande che fa una domanda</b><p>«Il cannolo più buono di Trapani?» si legge anche senza audio e fa venire voglia di sapere la risposta.</p></div>
+    <div class="rule"><div class="n">3</div><b>Sottotitoli e domanda finale</b><p>Sottotitoli grandi (come nel reel di Pisa-Palermo) e una domanda alla fine: i commenti aiutano il reel a girare.</p></div>
+  </div>
+  <footer>Demo preparata da <a href="https://digitalizziamopalermo.it">Digitalizziamo Palermo</a> · disegni illustrativi, non fotogrammi reali</footer>
+</div>
+<script>
+const descA=['Primo secondo: Pietro in auto. Chi non lo conosce non capisce di cosa parla il video.','Ancora in auto: molte persone qui hanno già scorso via.','Arrivo alla pasticceria.','Il cannolo arriva solo dopo diversi secondi.'];
+const descB=['Primo secondo: cannolo in primo piano + domanda grande. Si capisce subito.','Il morso con i sottotitoli: si segue anche senza audio.','La reazione di Pietro, con sottotitoli grandi.','Fine: domanda nei commenti per far partire la discussione.'];
+const tA=['0s','1s','3s','6s'],tB=['0s','1s','3s','fine'];
+let i=0,timer=null;
+function show(k){[['pa',descA,tA,'.side.a'],['pb',descB,tB,'.side.b']].forEach(([id,d,t,s])=>{
+  const p=document.getElementById(id),fr=p.querySelectorAll('.fr');
+  fr.forEach((f,j)=>{f.classList.toggle('on',j===k);if(j===k){f.classList.remove('zoom');void f.offsetWidth;if(id==='pb'&&j===0)f.classList.add('zoom')}});
+  p.querySelector('.time').textContent=t[k];p.querySelector('.prog i').style.width=((k+1)/4*100)+'%';
+  const side=document.querySelector(s);side.querySelectorAll('.steps span').forEach((x,j)=>x.classList.toggle('on',j===k));side.querySelector('.desc').textContent=d[k];})}
+function step(){i=(i+1)%4;show(i)}
+document.getElementById('next').onclick=()=>{stop();step()};
+const pb=document.getElementById('play');
+function stop(){clearInterval(timer);timer=null;pb.textContent='▶ Riproduci'}
+pb.onclick=()=>{if(timer){stop();return}pb.textContent='❚❚ Pausa';timer=setInterval(step,2200)};
+show(0);pb.click();
+</script>
+</body>
+</html>

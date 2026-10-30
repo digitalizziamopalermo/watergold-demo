@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Kit Pietro Adragna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#ff7eb3; --rosa2:#ffc2da; --nero:#0b0b0d; --nero2:#17171c; --nero3:#23232a;
+  --crema:#f6ead0; --pist:#a6c76c; --txt:#f4f1ea; --muted:#b9b4aa; --fz:#ffd400;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--nero);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:inherit}
+.deck{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.card{min-height:100vh;min-height:100dvh;scroll-snap-align:start;padding:56px 16px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.wrap{max-width:1040px;margin:0 auto;width:100%}
+h1,h2,.big{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.5px;text-transform:uppercase;line-height:.95}
+h1{font-size:clamp(56px,12vw,140px)}
+h2{font-size:clamp(40px,7vw,80px);margin-bottom:18px}
+.kicker{font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:13px;color:var(--rosa);margin-bottom:12px}
+.rosa{color:var(--rosa)} .pist{color:var(--pist)} .crema{color:var(--crema)}
+.stripes{position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 60px,rgba(255,126,179,.06) 60px 120px);pointer-events:none}
+/* FITTIZIO */
+.fz{position:relative;outline:2px dashed var(--fz);outline-offset:3px;border-radius:6px}
+.fz::after{content:"FITTIZIO";position:absolute;top:-11px;right:-6px;background:var(--fz);color:#000;font:800 10px/1 Inter,sans-serif;letter-spacing:1px;padding:3px 6px;border-radius:4px}
+mark.fzt{background:var(--fz);color:#000;padding:0 5px;border-radius:4px;font-weight:800}
+/* cover */
+.cover-grid{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.avatar{width:200px;height:200px;border-radius:50%;position:relative;display:grid;place-items:center}
+.avatar::before{content:"";position:absolute;inset:-10px;border-radius:50%;background:conic-gradient(var(--rosa),var(--nero),var(--rosa),var(--pist),var(--rosa));animation:spin 6s linear infinite}
+.avatar .in{position:relative;width:100%;height:100%;border-radius:50%;background:var(--nero2);border:6px solid var(--nero);display:grid;place-items:center;text-align:center;font-family:Anton,Impact,sans-serif;font-size:64px;color:var(--rosa)}
+.avatar .in small{display:block;font:800 10px Inter,sans-serif;color:var(--fz);letter-spacing:1px;margin-top:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.handle{font-weight:800;font-size:18px;margin:10px 0 6px}
+.tag{color:var(--muted);font-size:17px;max-width:560px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.stat{background:var(--nero2);border:1px solid var(--nero3);border-radius:18px;padding:18px 16px}
+.stat .n{font-family:Anton,Impact,sans-serif;font-size:clamp(34px,5vw,54px);color:var(--crema)}
+.stat .l{color:var(--muted);font-size:13px;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid var(--rosa);color:var(--rosa2);border-radius:99px;padding:6px 12px;font-size:13px;font-weight:600}
+/* reels */
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.reel{display:block;text-decoration:none;background:var(--nero2);border:1px solid var(--nero3);border-radius:20px;overflow:hidden;transition:transform .25s,border-color .25s}
+.reel:hover{transform:translateY(-6px) rotate(-.6deg);border-color:var(--rosa)}
+.prev{aspect-ratio:9/12;position:relative;overflow:hidden}
+.prev .play{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center;font-size:18px}
+.prev .bar{position:absolute;left:10px;right:10px;top:10px;height:3px;background:rgba(255,255,255,.25);border-radius:3px;overflow:hidden}
+.prev .bar i{display:block;height:100%;background:#fff;animation:prog 6s linear infinite}
+@keyframes prog{from{width:0}to{width:100%}}
+.p1{background:radial-gradient(circle at 50% 60%,#3a2a1a,#120c08)}
+.cannolo{position:absolute;left:50%;top:52%;width:170px;height:64px;margin:-32px 0 0 -85px;border-radius:32px;background:linear-gradient(180deg,#d99a55,#9b5f25 70%,#6d3f16);transform:rotate(-22deg);animation:bob 3s ease-in-out infinite;box-shadow:0 16px 30px rgba(0,0,0,.5)}
+.cannolo::before,.cannolo::after{content:"";position:absolute;top:4px;width:56px;height:56px;border-radius:50%;background:radial-gradient(circle,#fff8e8 0 55%,#f3e2bf 56%);}
+.cannolo::before{left:-18px} .cannolo::after{right:-18px}
+.cannolo .pi{position:absolute;top:18px;width:9px;height:9px;border-radius:50%;background:var(--pist);z-index:2}
+@keyframes bob{50%{transform:rotate(-16deg) translateY(-8px) scale(1.04)}}
+.p2{background:repeating-linear-gradient(90deg,var(--rosa) 0 34px,#111 34px 68px);animation:slide 4s linear infinite;background-size:200% 100%}
+@keyframes slide{to{background-position:-136px 0}}
+.p2 .ball{position:absolute;left:50%;top:48%;font-size:78px;transform:translate(-50%,-50%);animation:kick 1.6s ease-in-out infinite;filter:drop-shadow(0 10px 10px rgba(0,0,0,.5))}
+@keyframes kick{50%{transform:translate(-50%,-70%) rotate(180deg)}}
+.p3{background:linear-gradient(160deg,#1b1b22,#33263a)}
+.p3 .phone{position:absolute;left:50%;top:52%;font-size:72px;transform:translate(-50%,-50%)}
+.p3 .emo{position:absolute;font-size:34px;animation:up 3s linear infinite;opacity:0}
+@keyframes up{0%{transform:translateY(40px);opacity:0}20%{opacity:1}100%{transform:translateY(-160px);opacity:0}}
+.sub{position:absolute;left:10px;right:10px;bottom:66px;text-align:center;font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;color:#fff;text-shadow:0 2px 0 #000,0 0 12px #000}
+.rinfo{padding:14px 16px 18px}
+.rinfo b{display:block;font-size:16px;margin-bottom:8px}
+.nums{display:flex;gap:14px;flex-wrap:wrap;color:var(--crema);font-weight:800;font-size:14px}
+.nums span{white-space:nowrap}
+.rinfo .d{color:var(--muted);font-size:12px;margin-top:8px}
+.vero{display:inline-block;background:var(--pist);color:#000;font-size:10px;font-weight:800;letter-spacing:1px;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle}
+/* audience */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.box{background:var(--nero2);border:1px solid var(--nero3);border-radius:20px;padding:20px}
+.box h3{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--rosa2);margin-bottom:14px}
+.row{margin:12px 0}
+.row .t{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.track{height:12px;background:var(--nero3);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--rosa),var(--crema));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.note{color:var(--muted);font-size:13px;margin-top:16px}
+/* collab */
+.offers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.offer{background:var(--nero2);border:1px solid var(--nero3);border-radius:18px;padding:18px;transition:transform .2s,border-color .2s}
+.offer:hover{transform:translateY(-4px);border-color:var(--pist)}
+.offer .ic{font-size:30px}
+.offer b{display:block;margin:10px 0 6px}
+.offer p{color:var(--muted);font-size:13px}
+.brands{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}
+.brand{background:var(--nero2);border-radius:12px;padding:12px 18px;font-weight:800;color:var(--crema)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:99px;font-weight:800;text-decoration:none;border:2px solid var(--rosa);transition:transform .15s}
+.btn:hover{transform:scale(1.04)}
+.btn.pri{background:var(--rosa);color:#000}
+.credit{margin-top:34px;color:var(--muted);font-size:12px}
+/* nav */
+.dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:5}
+.dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--rosa);background:transparent;cursor:pointer}
+.dots button.on{background:var(--rosa)}
+.hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:12px;animation:hint 1.8s ease-in-out infinite}
+@keyframes hint{50%{transform:translate(-50%,6px)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.card.vis .reveal{opacity:1;transform:none}
+.card.vis .reveal:nth-child(2){transition-delay:.1s}.card.vis .reveal:nth-child(3){transition-delay:.2s}.card.vis .reveal:nth-child(4){transition-delay:.3s}
+@media (max-width:820px){
+  .cover-grid{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .avatar{width:150px;height:150px}.avatar .in{font-size:48px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .reels,.aud{grid-template-columns:1fr}
+  .offers{grid-template-columns:1fr 1fr}
+  .chips{justify-content:center}
+  .dots{right:6px}
+  .prev{aspect-ratio:16/10}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="dots" aria-label="Schede"></nav>
+<main class="deck" id="deck">
+
+<!-- 1 COPERTINA -->
+<section class="card" id="c1">
+  <div class="stripes"></div>
+  <div class="wrap">
+    <div class="cover-grid">
+      <div class="avatar reveal fz"><div class="in">PA<small>FOTO DA INSERIRE</small></div></div>
+      <div>
+        <div class="kicker reveal">Media kit · 2026</div>
+        <h1 class="reveal">Pietro<br><span class="rosa">Adragna</span></h1>
+        <div class="handle reveal">@pietroadragna_mustachef</div>
+        <p class="tag reveal">Cibo e tradizioni siciliane, pasticcerie e locali della provincia di Trapani, trasferte e tifo rosanero. Contenuti veri, girati sul posto.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal fz"><div class="n" data-count="48000">0</div><div class="l">follower</div></div>
+      <div class="stat reveal fz"><div class="n" data-count="35000">0</div><div class="l">visualizzazioni medie per reel</div></div>
+      <div class="stat reveal"><div class="n" data-count="6121">0</div><div class="l">like sul reel del cannolo <span class="vero">VERO</span></div></div>
+      <div class="stat reveal"><div class="n" data-count="580">0</div><div class="l">commenti sul reel del cannolo <span class="vero">VERO</span></div></div>
+    </div>
+    <div class="chips reveal">
+      <span class="chip">🍰 Pasticcerie</span><span class="chip">🍽️ Locali</span><span class="chip">📍 Provincia di Trapani</span><span class="chip">⚽ Palermo calcio</span><span class="chip">🎬 Reaction</span>
+    </div>
+  </div>
+  <div class="hint">scorri ↓</div>
+</section>
+
+<!-- 2 CONTENUTI -->
+<section class="card" id="c2">
+  <div class="wrap">
+    <div class="kicker reveal">I contenuti che funzionano</div>
+    <h2 class="reveal">3 reel, <span class="pist">numeri veri</span></h2>
+    <div class="reels">
+      <a class="reel reveal" href="https://www.instagram.com/pietroadragna_mustachef/reel/DepNt_RAKW9/" target="_blank" rel="noopener">
+        <div class="prev p1"><div class="bar"><i></i></div>
+          <div class="cannolo"><span class="pi" style="left:-4px"></span><span class="pi" style="left:10px;top:30px"></span><span class="pi" style="right:-2px"></span><span class="pi" style="right:12px;top:32px"></span></div>
+          <div class="sub">Il miglior cannolo?</div><div class="play">▶</div></div>
+        <div class="rinfo"><b>«Il miglior cannolo della provincia di Trapani»</b>
+          <div class="nums"><span>❤️ <span data-count="6121">0</span></span><span>💬 <span data-count="580">0</span></span></div>
+          <div class="d">18 ottobre 2026 · guarda il reel ↗</div></div>
+      </a>
+      <a class="reel reveal" href="https://www.instagram.com/pietroadragna_mustachef/reel/DfDWRkoAljy/" target="_blank" rel="noopener">
+        <div class="prev p2"><div class="bar"><i></i></div><div class="ball">⚽</div><div class="sub">Pisa – Palermo</div><div class="play">▶</div></div>
+        <div class="rinfo"><b>«Pisa-Palermo allo stadio»</b>
+          <div class="nums"><span>❤️ <span data-count="2496">0</span></span><span>💬 <span data-count="70">0</span></span><span>↗ <span data-count="17">0</span> condivisioni</span></div>
+          <div class="d">28 ottobre 2026 · guarda il reel ↗</div></div>
+      </a>
+      <a class="reel reveal" href="https://www.instagram.com/pietroadragna_mustachef/reel/Dew4d8Ug1Bm/" target="_blank" rel="noopener">
+        <div class="prev p3"><div class="bar"><i></i></div><div class="phone">📱</div>
+          <span class="emo" style="left:18%;bottom:20%">😂</span><span class="emo" style="left:68%;bottom:24%;animation-delay:1s">🔥</span><span class="emo" style="left:44%;bottom:16%;animation-delay:2s">💬</span>
+          <div class="sub">Reaction dal Sud</div><div class="play">▶</div></div>
+        <div class="rinfo"><b>«Come mai i maranza non ci sono al sud?»</b>
+          <div class="nums"><span>❤️ <span data-count="1054">0</span></span><span>💬 <span data-count="134">0</span></span><span>↗ <span data-count="58">0</span> condivisioni</span></div>
+          <div class="d">21 ottobre 2026 · guarda il reel ↗</div></div>
+      </a>
+    </div>
+    <p class="note reveal">Dati letti dal profilo pubblico il 29-30 ottobre 2026.</p>
+  </div>
+</section>
+
+<!-- 3 PUBBLICO -->
+<section class="card" id="c3">
+  <div class="wrap">
+    <div class="kicker reveal">Chi mi segue</div>
+    <h2 class="reveal">Il mio <span class="rosa">pubblico</span> <mark class="fzt" style="font-family:Inter;font-size:16px;vertical-align:middle">DATI FITTIZI</mark></h2>
+    <div class="aud">
+      <div class="box reveal fz"><h3>Età</h3>
+        <div class="row" data-v="24"><div class="t"><span>18-24</span><b>24%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="41"><div class="t"><span>25-34</span><b>41%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="22"><div class="t"><span>35-44</span><b>22%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="13"><div class="t"><span>45+</span><b>13%</b></div><div class="track"><div class="fill"></div></div></div>
+      </div>
+      <div class="box reveal fz"><h3>Città</h3>
+        <div class="row" data-v="38"><div class="t"><span>Palermo</span><b>38%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="21"><div class="t"><span>Trapani e provincia</span><b>21%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="11"><div class="t"><span>Agrigento</span><b>11%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="30"><div class="t"><span>Altre città</span><b>30%</b></div><div class="track"><div class="fill"></div></div></div>
+      </div>
+      <div class="box reveal fz"><h3>Genere</h3>
+        <div class="row" data-v="57"><div class="t"><span>Uomini</span><b>57%</b></div><div class="track"><div class="fill"></div></div></div>
+        <div class="row" data-v="43"><div class="t"><span>Donne</span><b>43%</b></div><div class="track"><div class="fill"></div></div></div>
+        <p class="note">Un pubblico siciliano che ama mangiare fuori e segue il Palermo: le persone che entrano nei locali.</p>
+      </div>
+    </div>
+    <p class="note reveal">I valori in giallo sono segnaposto: verranno sostituiti con gli insight reali di Instagram.</p>
+  </div>
+</section>
+
+<!-- 4 COLLABORIAMO -->
+<section class="card" id="c4">
+  <div class="stripes"></div>
+  <div class="wrap">
+    <div class="kicker reveal">Collaboriamo</div>
+    <h2 class="reveal">Cosa posso fare <span class="pist">per il tuo locale</span></h2>
+    <div class="offers">
+      <div class="offer reveal"><div class="ic">🎬</div><b>Reel dedicato</b><p>Visito il locale, assaggio e racconto: un reel vero, nel mio stile.</p></div>
+      <div class="offer reveal"><div class="ic">📲</div><b>Storie + codice sconto</b><p>Storie con link e codice dedicato per portarti clienti misurabili.</p></div>
+      <div class="offer reveal"><div class="ic">🏆</div><b>Classifiche e tour</b><p>Il tuo prodotto dentro una rubrica: «il miglior cannolo», «tour del gusto».</p></div>
+      <div class="offer reveal"><div class="ic">⚽</div><b>Giorno partita</b><p>Contenuti legati al Palermo e alle trasferte, quando l’attenzione è al massimo.</p></div>
+    </div>
+    <div class="kicker reveal" style="margin-top:30px">Hanno già collaborato con me</div>
+    <div class="brands reveal">
+      <span class="brand fz">Pasticceria Esempio</span><span class="brand fz">Bar Esempio</span><span class="brand fz">Brand Esempio</span>
+    </div>
+    <div class="btns reveal">
+      <a class="btn pri" href="mailto:info@pietroadragna.com?subject=Collaborazione">✉️ info@pietroadragna.com</a>
+      <a class="btn" href="https://www.instagram.com/pietroadragna_mustachef/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="btn" href="media-kit.pdf" download>⬇️ Scarica il PDF</a>
+    </div>
+    <p class="credit">Media kit realizzato da <a href="https://digitalizziamopalermo.it" target="_blank" rel="noopener">Digitalizziamo Palermo</a></p>
+  </div>
+</section>
+</main>
+
+<script>
+const deck=document.getElementById('deck'),cards=[...document.querySelectorAll('.card')],dots=document.querySelector('.dots');
+cards.forEach((c,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Scheda '+(i+1));b.onclick=()=>c.scrollIntoView({behavior:'smooth'});dots.appendChild(b)});
+const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+function count(el){const t=+el.dataset.count;if(el._done)return;el._done=1;const d=1600,s=performance.now();
+  (function f(now){const p=Math.min(1,(now-s)/d),e=1-Math.pow(1-p,3);el.textContent=fmt(Math.round(t*e));if(p<1)requestAnimationFrame(f)})(s)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const c=e.target;c.classList.add('vis');
+  const i=cards.indexOf(c);[...dots.children].forEach((d,j)=>d.classList.toggle('on',j===i));
+  c.querySelectorAll('[data-count]').forEach(count);
+  c.querySelectorAll('.row').forEach(r=>r.querySelector('.fill').style.width=r.dataset.v+'%');
+}),{root:deck,threshold:.45});
+cards.forEach(c=>io.observe(c));
+addEventListener('keydown',e=>{const i=[...dots.children].findIndex(d=>d.classList.contains('on'));
+  if(['ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();cards[Math.min(i+1,cards.length-1)].scrollIntoView({behavior:'smooth'})}
+  if(['ArrowUp','PageUp'].includes(e.key)){e.preventDefault();cards[Math.max(i-1,0)].scrollIntoView({behavior:'smooth'})}});
+</script>
+</body>
+</html>

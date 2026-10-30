@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Media Kit Pietro Adragna (PDF)</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}
+:root{--rosa:#ff7eb3;--rosa2:#ffc2da;--nero:#0b0b0d;--nero2:#18181d;--nero3:#26262d;--crema:#f6ead0;--pist:#a6c76c;--txt:#f4f1ea;--muted:#b9b4aa;--fz:#ffd400}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:#555;font-family:Inter,Arial,sans-serif;color:var(--txt)}
+.page{width:210mm;height:297mm;background:var(--nero);padding:16mm 15mm;position:relative;overflow:hidden;margin:0 auto 10mm;page-break-after:always;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;margin-bottom:0}
+@media print{body{background:none}.page{margin:0}}
+.stripes{position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 22mm,rgba(255,126,179,.07) 22mm 44mm)}
+.band{position:absolute;left:0;right:0;bottom:0;height:7mm;background:repeating-linear-gradient(90deg,var(--rosa) 0 14mm,#000 14mm 28mm)}
+.z{position:relative}
+h1,h2{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.95}
+h1{font-size:80pt} h2{font-size:38pt;margin-bottom:6mm}
+.k{font-weight:800;letter-spacing:2.5px;text-transform:uppercase;font-size:9pt;color:var(--rosa);margin-bottom:3mm}
+.rosa{color:var(--rosa)}.pist{color:var(--pist)}
+.fz{position:relative;outline:1.5px dashed var(--fz);outline-offset:2px;border-radius:4px}
+.fz::after{content:"FITTIZIO";position:absolute;top:-8px;right:-4px;background:var(--fz);color:#000;font:800 7pt/1 Inter,sans-serif;padding:2px 4px;border-radius:3px}
+.fzt{background:var(--fz);color:#000;font-weight:800;padding:0 4px;border-radius:3px;font-size:9pt}
+.vero{background:var(--pist);color:#000;font-size:6.5pt;font-weight:800;padding:1px 4px;border-radius:3px}
+.top{display:flex;gap:10mm;align-items:center;margin-top:8mm}
+.av{width:52mm;height:52mm;border-radius:50%;background:conic-gradient(var(--rosa),#000,var(--rosa),var(--pist),var(--rosa));padding:3mm;flex:none}
+.av div{width:100%;height:100%;border-radius:50%;background:var(--nero2);border:2mm solid var(--nero);display:grid;place-items:center;text-align:center;font-family:Anton,Impact;font-size:40pt;color:var(--rosa)}
+.av small{display:block;font:800 7pt Inter;color:var(--fz)}
+.handle{font-weight:800;font-size:13pt;margin:3mm 0 2mm}
+.tag{color:var(--muted);font-size:11pt;line-height:1.45}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:14mm}
+.st{background:var(--nero2);border:1px solid var(--nero3);border-radius:5mm;padding:6mm}
+.st .n{font-family:Anton,Impact;font-size:34pt;color:var(--crema)}
+.st .l{color:var(--muted);font-size:9.5pt;margin-top:1mm}
+.chips{display:flex;flex-wrap:wrap;gap:2.5mm;margin-top:10mm}
+.chip{border:1px solid var(--rosa);color:var(--rosa2);border-radius:99px;padding:2mm 4mm;font-size:9pt;font-weight:600}
+.foot{margin-top:auto;color:var(--muted);font-size:8pt;padding-bottom:6mm}
+.foot a{color:var(--rosa2)}
+.reel{display:flex;gap:6mm;background:var(--nero2);border:1px solid var(--nero3);border-radius:5mm;padding:5mm;margin-bottom:5mm;text-decoration:none;color:inherit}
+.th{width:32mm;height:42mm;border-radius:3mm;flex:none;display:grid;place-items:center;font-size:30pt;position:relative;overflow:hidden}
+.mc{display:block;width:24mm;height:9mm;border-radius:4.5mm;background:linear-gradient(#d99a55,#6d3f16);transform:rotate(-22deg);box-shadow:-3mm 0 0 -1mm #fff8e8,3mm 0 0 -1mm #fff8e8, 0 0 0 0 #000;outline:1.6mm solid transparent}
+.th1{background:radial-gradient(circle,#4a321c,#120c08)}
+.th2{background:repeating-linear-gradient(90deg,var(--rosa) 0 6mm,#111 6mm 12mm)}
+.th3{background:linear-gradient(160deg,#1b1b22,#3a2a42)}
+.th span{position:absolute;bottom:2mm;left:2mm;right:2mm;text-align:center;font:400 9pt Anton,Impact;text-transform:uppercase;color:#fff;text-shadow:0 1px 0 #000}
+.ri b{font-size:12.5pt;display:block;margin-bottom:2mm}
+.ri .d{color:var(--muted);font-size:9pt}
+.ri .nums{display:flex;gap:5mm;margin:3mm 0;font-weight:800;color:var(--crema);font-size:12pt}
+.ri .link{color:var(--rosa);font-weight:800;font-size:9.5pt;text-decoration:underline}
+.aud{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm}
+.box{background:var(--nero2);border:1px solid var(--nero3);border-radius:4mm;padding:4mm}
+.box h3{font-size:8.5pt;letter-spacing:1.5px;text-transform:uppercase;color:var(--rosa2);margin-bottom:2mm}
+.r{margin:2.5mm 0;font-size:8.5pt}
+.r .t{display:flex;justify-content:space-between;margin-bottom:1mm}
+.tr{height:2.5mm;background:var(--nero3);border-radius:2mm;overflow:hidden}
+.tr i{display:block;height:100%;background:linear-gradient(90deg,var(--rosa),var(--crema))}
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.of{background:var(--nero2);border:1px solid var(--nero3);border-radius:4mm;padding:5mm}
+.of b{display:block;font-size:12pt;margin:1.5mm 0}
+.of p{color:var(--muted);font-size:9.5pt;line-height:1.4}
+.brands{display:flex;gap:4mm;margin:4mm 0 8mm}
+.brand{background:var(--nero2);border-radius:3mm;padding:3mm 5mm;font-weight:800;color:var(--crema);font-size:10pt}
+.cont{background:var(--rosa);color:#000;border-radius:5mm;padding:7mm}
+.cont h3{font-family:Anton,Impact;font-weight:400;font-size:24pt;text-transform:uppercase;margin-bottom:3mm}
+.cont a{color:#000;font-weight:800;font-size:12pt;display:block;margin:1.5mm 0}
+.sec{margin-top:9mm}
+</style>
+</head>
+<body>
+
+<section class="page"><div class="stripes"></div>
+  <div class="z">
+    <div class="k">Media kit · 2026</div>
+    <div class="top">
+      <div class="av fz"><div>PA<small>FOTO DA INSERIRE</small></div></div>
+      <div><h1>Pietro<br><span class="rosa">Adragna</span></h1>
+        <div class="handle">@pietroadragna_mustachef</div></div>
+    </div>
+    <p class="tag" style="margin-top:8mm">Creator siciliano. Cibo e tradizioni siciliane, pasticcerie e locali della provincia di Trapani, trasferte e tifo del Palermo calcio, reaction. Contenuti veri, girati sul posto, con un pubblico che commenta e condivide.</p>
+    <div class="stats">
+      <div class="st fz"><div class="n">48.000</div><div class="l">follower</div></div>
+      <div class="st fz"><div class="n">35.000</div><div class="l">visualizzazioni medie per reel</div></div>
+      <div class="st"><div class="n">6.121</div><div class="l">like sul reel del cannolo <span class="vero">VERO</span></div></div>
+      <div class="st"><div class="n">580</div><div class="l">commenti sul reel del cannolo <span class="vero">VERO</span></div></div>
+    </div>
+    <div class="chips"><span class="chip">Pasticcerie</span><span class="chip">Locali</span><span class="chip">Provincia di Trapani</span><span class="chip">Palermo calcio</span><span class="chip">Street food</span><span class="chip">Reaction</span></div>
+  </div>
+  <div class="foot z">Pagina 1/3 · I valori con bordo giallo «FITTIZIO» sono segnaposto da sostituire con i dati reali.</div>
+  <div class="band"></div>
+</section>
+
+<section class="page"><div class="stripes"></div>
+  <div class="z">
+    <div class="k">I contenuti che funzionano</div>
+    <h2>3 reel, <span class="pist">numeri veri</span></h2>
+    <a class="reel" href="https://www.instagram.com/pietroadragna_mustachef/reel/DepNt_RAKW9/">
+      <div class="th th1"><i class="mc"></i><span>Il miglior cannolo?</span></div>
+      <div class="ri"><b>«Il miglior cannolo della provincia di Trapani»</b><div class="d">18 ottobre 2026 · cibo e tradizioni</div>
+        <div class="nums"><span>❤ 6.121 like</span><span>💬 580 commenti</span></div>
+        <span class="link">Guarda il reel su Instagram ↗</span></div></a>
+    <a class="reel" href="https://www.instagram.com/pietroadragna_mustachef/reel/DfDWRkoAljy/">
+      <div class="th th2">⚽<span>Pisa – Palermo</span></div>
+      <div class="ri"><b>«Pisa-Palermo allo stadio»</b><div class="d">28 ottobre 2026 · trasferte rosanero</div>
+        <div class="nums"><span>❤ 2.496 like</span><span>💬 70</span><span>↗ 17 condivisioni</span></div>
+        <span class="link">Guarda il reel su Instagram ↗</span></div></a>
+    <a class="reel" href="https://www.instagram.com/pietroadragna_mustachef/reel/Dew4d8Ug1Bm/">
+      <div class="th th3">📱<span>Reaction dal Sud</span></div>
+      <div class="ri"><b>«Come mai i maranza non ci sono al sud?»</b><div class="d">21 ottobre 2026 · reaction</div>
+        <div class="nums"><span>❤ 1.054 like</span><span>💬 134</span><span>↗ 58 condivisioni</span></div>
+        <span class="link">Guarda il reel su Instagram ↗</span></div></a>
+    <p class="tag" style="font-size:8.5pt">Dati letti dal profilo pubblico il 29-30 ottobre 2026.</p>
+
+    <div class="sec">
+      <div class="k">Chi mi segue <span class="fzt">DATI FITTIZI</span></div>
+      <div class="aud">
+        <div class="box fz"><h3>Età</h3>
+          <div class="r"><div class="t"><span>18-24</span><b>24%</b></div><div class="tr"><i style="width:24%"></i></div></div>
+          <div class="r"><div class="t"><span>25-34</span><b>41%</b></div><div class="tr"><i style="width:41%"></i></div></div>
+          <div class="r"><div class="t"><span>35-44</span><b>22%</b></div><div class="tr"><i style="width:22%"></i></div></div>
+          <div class="r"><div class="t"><span>45+</span><b>13%</b></div><div class="tr"><i style="width:13%"></i></div></div></div>
+        <div class="box fz"><h3>Città</h3>
+          <div class="r"><div class="t"><span>Palermo</span><b>38%</b></div><div class="tr"><i style="width:38%"></i></div></div>
+          <div class="r"><div class="t"><span>Trapani e prov.</span><b>21%</b></div><div class="tr"><i style="width:21%"></i></div></div>
+          <div class="r"><div class="t"><span>Agrigento</span><b>11%</b></div><div class="tr"><i style="width:11%"></i></div></div>
+          <div class="r"><div class="t"><span>Altre</span><b>30%</b></div><div class="tr"><i style="width:30%"></i></div></div></div>
+        <div class="box fz"><h3>Genere</h3>
+          <div class="r"><div class="t"><span>Uomini</span><b>57%</b></div><div class="tr"><i style="width:57%"></i></div></div>
+          <div class="r"><div class="t"><span>Donne</span><b>43%</b></div><div class="tr"><i style="width:43%"></i></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot z">Pagina 2/3</div>
+  <div class="band"></div>
+</section>
+
+<section class="page"><div class="stripes"></div>
+  <div class="z">
+    <div class="k">Collaboriamo</div>
+    <h2>Cosa posso fare <span class="pist">per il tuo locale</span></h2>
+    <div class="offers">
+      <div class="of">🎬<b>Reel dedicato</b><p>Visito il locale, assaggio e racconto il prodotto nel mio stile, con il tag del locale.</p></div>
+      <div class="of">📲<b>Storie + codice sconto</b><p>Storie con link e codice dedicato: i clienti che arrivano si contano.</p></div>
+      <div class="of">🏆<b>Classifiche e tour</b><p>Il tuo prodotto dentro una rubrica riconoscibile, come «il miglior cannolo della provincia».</p></div>
+      <div class="of">⚽<b>Giorno partita</b><p>Contenuti legati al Palermo e alle trasferte, quando l’attenzione del pubblico è al massimo.</p></div>
+    </div>
+    <div class="k" style="margin-top:10mm">Hanno già collaborato con me</div>
+    <div class="brands"><span class="brand fz">Pasticceria Esempio</span><span class="brand fz">Bar Esempio</span><span class="brand fz">Brand Esempio</span></div>
+    <div class="cont">
+      <h3>Scrivimi per una collaborazione</h3>
+      <a href="mailto:info@pietroadragna.com">✉ info@pietroadragna.com</a>
+      <a href="https://www.instagram.com/pietroadragna_mustachef/">📸 instagram.com/pietroadragna_mustachef</a>
+    </div>
+  </div>
+  <div class="foot z">Pagina 3/3 · Media kit realizzato da <a href="https://digitalizziamopalermo.it">Digitalizziamo Palermo</a> · digitalizziamopalermo.it</div>
+  <div class="band"></div>
+</section>
+</body>
+</html>

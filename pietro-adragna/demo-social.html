@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Gestione Social</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#ff7eb3;--nero:#0b0b0d;--nero2:#17171c;--nero3:#26262d;--crema:#f6ead0;--pist:#a6c76c;--viola:#b48cff;--txt:#f4f1ea;--muted:#b9b4aa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nero);color:var(--txt);font-family:Inter,system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:36px 16px 50px}
+.k{font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--rosa)}
+h1{font:400 clamp(38px,7vw,68px)/.95 Anton,Impact,sans-serif;text-transform:uppercase;margin:8px 0 10px}
+h1 span{color:var(--pist)}
+.lead{color:var(--muted);max-width:660px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:22px 0 14px;font-size:13px;font-weight:600}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{background:var(--nero2);border:1px solid var(--nero3);border-radius:14px;min-height:240px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.day h3{font:400 18px Anton,Impact,sans-serif;text-transform:uppercase;color:var(--muted)}
+.story{font-size:11px;color:var(--muted);border:1px dashed var(--nero3);border-radius:8px;padding:6px}
+.post{border-radius:12px;padding:10px;color:#000;cursor:pointer;transition:transform .2s;opacity:0;transform:scale(.85)}
+.post.in{opacity:1;transform:none;transition:opacity .5s,transform .5s}
+.post:hover{transform:scale(1.04)}
+.post .h{font-weight:800;font-size:12px}
+.post .t{font:400 17px/1 Anton,Impact,sans-serif;text-transform:uppercase;margin:4px 0}
+.post .c{font-size:11px;font-weight:600}
+.food{background:var(--crema)} .calcio{background:var(--rosa)} .reac{background:var(--viola)}
+.detail{margin-top:22px;background:var(--nero2);border:1px solid var(--nero3);border-radius:18px;padding:20px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;min-height:120px}
+.detail .ic{font-size:50px}
+.detail b{font:400 26px Anton,Impact,sans-serif;text-transform:uppercase;display:block}
+.detail p{color:var(--muted);font-size:14px;margin-top:4px}
+.detail .cta{margin-top:10px;display:inline-block;background:var(--pist);color:#000;font-weight:800;font-size:13px;border-radius:99px;padding:6px 12px}
+.note{color:var(--muted);font-size:12px;margin-top:12px}
+footer{margin-top:30px;color:var(--muted);font-size:12px;text-align:center}
+footer a{color:var(--rosa)}
+@media(max-width:820px){.week{grid-template-columns:1fr}.day{min-height:auto}.day:not(:has(.post)){display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="k">Gestione social · esempio</div>
+  <h1>Una settimana tipo:<br><span>3 contenuti, 3 obiettivi</span></h1>
+  <p class="lead">Un ritmo semplice e costante: un contenuto per ciascun filone, ognuno con la sua call to action. Clicca un contenuto per vedere i dettagli.</p>
+  <div class="legend"><span><i style="background:var(--crema)"></i>Cibo</span><span><i style="background:var(--rosa)"></i>Palermo calcio</span><span><i style="background:var(--viola)"></i>Reaction</span><span style="color:var(--muted)">▫ storie quotidiane</span></div>
+  <div class="week" id="week"></div>
+  <div class="detail" id="det"></div>
+  <p class="note">Orari indicativi: si confermano guardando negli insight quando i follower di Pietro sono più attivi. Il contenuto calcio si sposta in base al calendario del Palermo.</p>
+  <footer>Demo preparata da <a href="https://digitalizziamopalermo.it">Digitalizziamo Palermo</a></footer>
+</div>
+<script>
+const days=['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
+const stories=['Sondaggio: dove vado questa settimana?','Dietro le quinte','Box domande dai follower','Anteprima del reel di domani','Countdown alla partita','Live dallo stadio / dal locale','Riepilogo della settimana'];
+const posts={1:{cls:'food',ic:'🍰',h:'Mar · 19:30',t:'Cannolo Tour #02',c:'CTA: «Taggami la pasticceria che devo provare»',p:'Reel di cibo: pasticceria o locale della provincia di Trapani. Cannolo in primo piano nel primo secondo, voto finale. La sera, quando si pensa a cosa mangiare.'},
+ 4:{cls:'calcio',ic:'⚽',h:'Ven · 13:00 (o giorno partita)',t:'Trasferta Rosanero',c:'CTA: «Pronostico nei commenti 👇»',p:'Contenuto Palermo calcio: vigilia, trasferta, curva. Sottotitoli grandi come nel reel di Pisa-Palermo. Si pubblica a ridosso della partita, quando l’attenzione è massima.'},
+ 6:{cls:'reac',ic:'😂',h:'Dom · 12:30',t:'Reaction del Sud',c:'CTA: «Manda questo video a chi…»',p:'Reaction corta (sotto i 60 secondi) con il momento più forte all’inizio. La domenica a pranzo si scorre e si condivide di più con amici e famiglia.'}};
+const w=document.getElementById('week'),det=document.getElementById('det');
+function show(i){const p=posts[i];det.innerHTML=`<div class="ic">${p.ic}</div><div><b>${p.t}</b><p><strong>${p.h}</strong> — ${p.p}</p><span class="cta">${p.c}</span></div>`}
+days.forEach((d,i)=>{const el=document.createElement('div');el.className='day';el.innerHTML=`<h3>${d}</h3><div class="story">▫ ${stories[i]}</div>`;
+  if(posts[i]){const p=posts[i],x=document.createElement('div');x.className='post '+p.cls;x.innerHTML=`<div class="h">${p.h}</div><div class="t">${p.ic} ${p.t}</div><div class="c">${p.c}</div>`;x.onclick=()=>show(i);el.appendChild(x);setTimeout(()=>x.classList.add('in'),300+i*120)}
+  w.appendChild(el)});
+show(1);
+</script>
+</body>
+</html>

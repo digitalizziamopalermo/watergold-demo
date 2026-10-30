@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Collaborazioni Locali</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#ff7eb3;--nero:#0b0b0d;--nero2:#17171c;--nero3:#26262d;--crema:#f6ead0;--pist:#a6c76c;--txt:#f4f1ea;--muted:#b9b4aa;--fz:#ffd400}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nero);color:var(--txt);font-family:Inter,system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 16px 50px}
+.k{font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--rosa)}
+h1{font:400 clamp(38px,7vw,68px)/.95 Anton,Impact,sans-serif;text-transform:uppercase;margin:8px 0 10px}
+h1 span{color:var(--pist)}
+h2{font:400 30px Anton,Impact,sans-serif;text-transform:uppercase;margin:40px 0 16px}
+.lead{color:var(--muted);max-width:660px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:28px}
+.st{background:var(--nero2);border:1px solid var(--nero3);border-radius:16px;padding:16px 12px;text-align:center;position:relative;opacity:.25;transform:translateY(10px);transition:all .5s}
+.st.on{opacity:1;transform:none;border-color:var(--rosa)}
+.st .ic{font-size:34px}
+.st b{display:block;font-size:14px;margin:8px 0 4px}
+.st p{font-size:12px;color:var(--muted)}
+.st:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:40%;color:var(--rosa);font-weight:800}
+.mail{background:#fbf7ef;color:#1b1b1b;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.5);max-width:720px;margin:0 auto}
+.mh{background:#ece6da;padding:14px 18px;font-size:13px;line-height:1.7}
+.mh b{display:inline-block;width:70px;color:#666}
+.mb{padding:22px 22px 26px;font-size:15px;line-height:1.55}
+.mb p{margin-bottom:12px}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.pk div{background:#fff;border:2px solid #f0d6e2;border-radius:12px;padding:12px;font-size:13px}
+.pk div b{display:block;font-size:15px;margin:4px 0}
+.code{display:inline-block;font:400 22px Anton,Impact,sans-serif;letter-spacing:2px;background:#000;color:var(--rosa);padding:4px 12px;border-radius:8px}
+.ex{background:var(--fz);color:#000;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;vertical-align:middle}
+.mb a{color:#b0306b;font-weight:700}
+.stories{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.sty{width:150px;aspect-ratio:9/16;border-radius:18px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;position:relative;overflow:hidden}
+.sty .bar{display:flex;gap:3px}.sty .bar i{flex:1;height:3px;background:rgba(255,255,255,.35);border-radius:2px}.sty .bar i.f{background:#fff}
+.sty .t{font:400 20px/1 Anton,Impact,sans-serif;text-transform:uppercase;text-shadow:0 2px 0 #000}
+.sty .stk{background:#fff;color:#000;border-radius:10px;padding:6px;text-align:center;font-weight:800;font-size:11px;animation:wb 2s ease-in-out infinite}
+@keyframes wb{50%{transform:rotate(-3deg) scale(1.05)}}
+footer{margin-top:30px;color:var(--muted);font-size:12px;text-align:center}
+footer a{color:var(--rosa)}
+@media(max-width:760px){.flow{grid-template-columns:1fr}.st::after{display:none}.pk{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="k">Collaborazioni con i locali · esempio</div>
+  <h1>Come il media kit<br><span>ti porta lavoro</span></h1>
+  <p class="lead">Un locale vede la pagina in bio o riceve il media kit, capisce subito cosa può ottenere e ti scrive. Ecco un esempio di proposta e di cosa si pubblica.</p>
+
+  <div class="flow" id="flow">
+    <div class="st"><div class="ic">📄</div><b>Media kit</b><p>Il locale vede numeri, reel e pubblico</p></div>
+    <div class="st"><div class="ic">✉️</div><b>Contatto</b><p>Scrive dal modulo «Sei un brand?»</p></div>
+    <div class="st"><div class="ic">🤝</div><b>Proposta</b><p>Pietro risponde con un pacchetto chiaro</p></div>
+    <div class="st"><div class="ic">🎬</div><b>Contenuti</b><p>Reel dedicato + storie con codice</p></div>
+    <div class="st"><div class="ic">🧾</div><b>Risultati</b><p>Il locale conta chi arriva con il codice</p></div>
+  </div>
+
+  <h2>La proposta che riceve il locale</h2>
+  <div class="mail">
+    <div class="mh"><div><b>Da:</b> info@pietroadragna.com</div><div><b>A:</b> Pasticceria Esempio <span class="ex">ESEMPIO</span></div><div><b>Oggetto:</b> Collaborazione: un reel dedicato ai vostri cannoli</div></div>
+    <div class="mb">
+      <p>Ciao! Sono Pietro di <a href="https://www.instagram.com/pietroadragna_mustachef/">@pietroadragna_mustachef</a>: racconto cibo e tradizioni siciliane, e il mio reel sul miglior cannolo della provincia di Trapani ha superato i 6.000 like e 580 commenti.</p>
+      <p>Mi piacerebbe venire da voi e raccontare la vostra pasticceria. Ecco cosa vi propongo:</p>
+      <div class="pk">
+        <div>🎬<b>1 reel dedicato</b>Visita, assaggio e racconto, con tag e posizione del locale.</div>
+        <div>📲<b>3 storie</b>Prima, durante e dopo la visita, con link al vostro profilo.</div>
+        <div>🏷️<b>Codice sconto</b>I miei follower lo mostrano in cassa: <span class="code">PIETRO10</span></div>
+      </div>
+      <p>Così sapete esattamente quante persone sono arrivate grazie al video. Trovate numeri e pubblico nel mio media kit in allegato.</p>
+      <p>Se vi interessa, sentiamoci per scegliere il giorno.<br>A presto,<br><b>Pietro</b></p>
+    </div>
+  </div>
+
+  <h2>Le storie con il codice</h2>
+  <div class="stories">
+    <div class="sty" style="background:linear-gradient(#5a3c20,#170f08)"><div class="bar"><i class="f"></i><i></i><i></i></div><div class="t">Oggi vi porto<br>da…</div><div class="stk">📍 Pasticceria Esempio</div></div>
+    <div class="sty" style="background:linear-gradient(#ff7eb3,#7a1f4a)"><div class="bar"><i class="f"></i><i class="f"></i><i></i></div><div class="t">Il cannolo<br>che fa crack</div><div class="stk">🗳️ Lo proveresti? SÌ / NO</div></div>
+    <div class="sty" style="background:linear-gradient(#1b1b22,#000)"><div class="bar"><i class="f"></i><i class="f"></i><i class="f"></i></div><div class="t">Con il mio<br>codice</div><div class="stk" style="background:var(--rosa)">PIETRO10 · mostralo in cassa</div></div>
+  </div>
+  <footer>Demo preparata da <a href="https://digitalizziamopalermo.it">Digitalizziamo Palermo</a> · locale, codice e testo sono esempi</footer>
+</div>
+<script>
+const s=[...document.querySelectorAll('.st')];let i=0;
+function tick(){s.forEach((x,j)=>x.classList.toggle('on',j<=i));i=(i+1)%(s.length+1)}
+tick();setInterval(tick,1100);
+</script>
+</body>
+</html>
