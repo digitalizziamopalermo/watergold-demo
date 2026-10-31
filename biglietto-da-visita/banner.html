@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Banner firma Digitalizziamo Palermo</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:600px;height:200px;overflow:hidden;font-family:Inter,Arial,sans-serif;background:#0f1b3d}
+.b{position:relative;width:600px;height:200px;background:linear-gradient(120deg,#0f1b3d 0%,#18295a 70%,#22336b 100%);color:#fff;overflow:hidden}
+.glow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,61,.35),transparent 65%);left:-70px;top:-30px}
+.stripe{position:absolute;right:0;top:0;bottom:0;width:8px;background:linear-gradient(#ff8a3d,#ffc93c)}
+.logo{position:absolute;left:24px;top:50px;width:100px;height:100px}
+.ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#ff8a3d,#ffc93c,#ff8a3d 50%,#fff7ec 75%,#ff8a3d)}
+.mono{position:absolute;inset:6px;border-radius:50%;background:#0f1b3d;display:flex;justify-content:center;align-items:center;font:400 40px Anton,Impact,sans-serif;color:#fff;letter-spacing:1px}
+.mono span{color:#ff8a3d}
+.txt{position:absolute;left:146px;top:30px;right:24px}
+.name{font:400 34px/1 Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.name span{color:#ff8a3d}
+.tag{font-size:13px;color:#d6dcf0;margin-top:6px}
+.svc{position:relative;height:30px;margin-top:12px;overflow:hidden}
+.svc div{position:absolute;left:0;top:0;font:800 19px Inter,Arial;color:#ffc93c;white-space:nowrap}
+.svc div::before{content:"▸ ";color:#ff8a3d}
+.chips{display:none;flex-wrap:nowrap;gap:4px;margin-top:10px}
+.chips span{font-size:10px;font-weight:700;border:1px solid #ff8a3d;color:#fff7ec;border-radius:99px;padding:2px 7px;white-space:nowrap}
+.cta{position:absolute;left:146px;bottom:22px;display:flex;gap:10px;align-items:center;font-size:11.5px;white-space:nowrap;font-weight:700}
+.cta .web{background:#ff8a3d;color:#0f1b3d;border-radius:99px;padding:6px 12px}
+.cta .mail{color:#d6dcf0}
+body.static .svc{display:none}
+body.static .chips{display:flex}
+body.static .cta{bottom:18px}
+</style>
+</head>
+<body>
+<div class="b">
+  <div class="glow"></div><div class="stripe"></div>
+  <div class="logo"><div class="ring" id="ring"></div><div class="mono">D<span>P</span></div></div>
+  <div class="txt">
+    <div class="name">Digitalizziamo <span>Palermo</span></div>
+    <div class="tag">Comunicazione digitale per attività locali e creator</div>
+    <div class="svc" id="svc"></div>
+    <div class="chips"><span>Siti web</span><span>Gestione social</span><span>Grafiche</span><span>Montaggio reel</span><span>Campagne FB/IG</span></div>
+  </div>
+  <div class="cta"><span class="web">digitalizziamopalermo.it →</span><span class="mail">✉ digitalizziamopalermo@gmail.com</span></div>
+</div>
+<script>
+const S=['Siti web','Gestione social','Grafiche','Montaggio reel','Campagne Facebook e Instagram'],D=1.2,T=S.length*D;
+const svc=document.getElementById('svc'),ring=document.getElementById('ring');
+S.forEach(s=>{const d=document.createElement('div');d.textContent=s;svc.appendChild(d)});
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+window.setT=t=>{t=((t%T)+T)%T;ring.style.transform=`rotate(${t/T*360}deg)`;
+  const i=Math.floor(t/D),f=(t-i*D)/D;
+  [...svc.children].forEach((d,j)=>{let y=40,o=0;
+    if(j===i){const a=ease(f/0.25),b=ease((f-0.8)/0.2);y=40*(1-a)-40*b;o=a*(1-b)}
+    d.style.transform=`translateY(${y}px)`;d.style.opacity=o})};
+if(location.hash==='#static')document.body.classList.add('static');
+else if(location.hash!=='#frames'){const s=performance.now();(function f(n){setT((n-s)/1000);requestAnimationFrame(f)})(s)}
+setT(.4);
+</script>
+</body>
+</html>
